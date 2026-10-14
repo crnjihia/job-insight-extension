@@ -15,11 +15,22 @@ dotenv.config();
 export const app = express();
 const PORT = process.env.PORT ?? 4000;
 
+// Process safety handlers for offline mode
+process.on("uncaughtException", (err) => {
+  console.warn("Uncaught exception handled:", err.message);
+});
+process.on("unhandledRejection", (reason: any) => {
+  console.warn("Unhandled rejection handled:", reason?.message || reason);
+});
+
 // Connect to MongoDB with graceful error handling
 const MONGODB_URI = process.env.MONGODB_URI ?? "mongodb://localhost:27017/jobinsight";
 if (process.env.NODE_ENV !== "test") {
+  mongoose.connection.on("error", () => {
+    // Suppress unhandled mongoose connection errors in offline mode
+  });
   mongoose
-    .connect(MONGODB_URI)
+    .connect(MONGODB_URI, { serverSelectionTimeoutMS: 2000 })
     .then(() => console.log("MongoDB connected"))
     .catch((err) => {
       console.warn("MongoDB connection warning (offline mode enabled):", err.message);
