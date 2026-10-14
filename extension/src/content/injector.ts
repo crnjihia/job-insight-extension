@@ -339,3 +339,27 @@ export function injectSidebar(job: JobData): void {
 }
 
 /**
+ * Injects match badges onto job listing cards in search results pages.
+ */
+export function injectListingBadges(
+  cardSelector: string,
+  badgeTargetSelector?: string
+): void {
+  const cards = document.querySelectorAll(cardSelector);
+  cards.forEach((card) => {
+    if (card.querySelector(".job-insight-card-badge")) {
+      return;
+    }
+
+    const badge = document.createElement("div");
+    badge.className = "job-insight-card-badge";
+    badge.innerHTML = `<span class="job-insight-badge-sparkle">✦</span> Job Insight Ready`;
+
+    const target = badgeTargetSelector ? card.querySelector(badgeTargetSelector) : card;
+    if (target) {
+      target.appendChild(badge);
+    } else {
+      card.appendChild(badge);
+    }
+  });
+}
