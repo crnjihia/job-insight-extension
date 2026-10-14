@@ -2,6 +2,10 @@
 
 <p align="center">
   <strong>Next-Gen Job Application Intelligence Overlay for BrighterMonday, LinkedIn, and Fuzu</strong>
+  <br /><br />
+  <a href="https://crnjihia.github.io/job-insight-extension/">
+    <img src="https://img.shields.io/badge/%F0%9F%8C%90%20Live%20Demo-Visit%20Website-0ea5e9?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Demo Website" />
+  </a>
 </p>
 
 <p align="center">
@@ -18,8 +22,23 @@
 ---
 
 <p align="center">
-  <img src="docs/images/extension-demo.png" alt="Job Insight Extension in Action on LinkedIn" width="900" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);" />
+  <a href="https://crnjihia.github.io/job-insight-extension/" title="Click to open the live interactive demo">
+    <img src="docs/images/extension-demo.png" alt="Job Insight Extension in Action on LinkedIn" width="900" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);" />
+  </a>
 </p>
+
+---
+
+## 🌐 Live Interactive Demo
+
+Experience the full interactive simulator and documentation live in your browser without installing the extension:
+
+👉 **[https://crnjihia.github.io/job-insight-extension/](https://crnjihia.github.io/job-insight-extension/)**
+
+- 🧪 **Interactive Job Analysis Simulator**: Test realistic job listings from LinkedIn, BrighterMonday, and Fuzu.
+- 🎯 **Match Scoring & Gap Analysis**: Explore instant percentage fit dials, highlighted strengths, and prioritized skill gaps.
+- 💰 **Localized Compensation**: Inspect salary benchmark data localized in KES and USD.
+- 🏢 **Glassdoor Company Ratings**: View verified employer intelligence and review scores.
 
 ---
 
