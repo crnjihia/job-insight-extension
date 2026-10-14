@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Chunguza Extension",
+  "name": "Job Insight Extension",
   "version": "0.1.0",
   "description": "Job application intelligence overlay for BrighterMonday, LinkedIn, and Fuzu",
   "icons": {

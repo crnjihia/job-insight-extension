@@ -1,8 +1,8 @@
-# Privacy Policy – Chunguza Extension
+# Privacy Policy – Job Insight Extension
 
 **Effective date:** 2026‑10‑03  
 
-Chunguza Extension (“we”, “our”, “us”) is a Chrome extension that helps job seekers by overlaying data (salary benchmarks, company ratings, and AI‑generated match scores) onto job‑listing sites.
+Job Insight Extension (“we”, “our”, “us”) is a Chrome extension that helps job seekers by overlaying data (salary benchmarks, company ratings, and AI‑generated match scores) onto job‑listing sites.
 
 ## 1️⃣ What data do we collect?
 - **CV Text** – When you upload a CV (PDF) through the Options page, the raw text is extracted and **sent** to our backend API (`/cv/upload`) solely for the purpose of generating a match score.  
@@ -38,4 +38,4 @@ If you have questions or concerns, please email: `privacy@jobinsight.io`.
 
 ---
 
-*By installing and using the Chunguza Extension you acknowledge that you have read and understood this privacy policy.*
+*By installing and using the Job Insight Extension you acknowledge that you have read and understood this privacy policy.*

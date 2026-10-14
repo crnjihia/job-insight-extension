@@ -1,4 +1,4 @@
-# ✦ Chunguza Extension (Job Insight)
+# ✦ Job Insight Extension
 
 <p align="center">
   <strong>Next-Gen Job Application Intelligence Overlay for BrighterMonday, LinkedIn, and Fuzu</strong>
@@ -18,9 +18,9 @@
 
 ## 📌 Overview
 
-**Chunguza Extension** is a developer and professional companion Chrome extension designed to eliminate guesswork from your job search. 
+**Job Insight Extension** is a developer and professional companion Chrome extension designed to eliminate guesswork from your job search. 
 
-When you browse job vacancies on **LinkedIn**, **BrighterMonday**, or **Fuzu**, Chunguza automatically injects an intelligent glassmorphism badge and slide-out drawer that provides:
+When you browse job vacancies on **LinkedIn**, **BrighterMonday**, or **Fuzu**, Job Insight automatically injects an intelligent glassmorphism badge and slide-out drawer that provides:
 
 1. 🎯 **AI-Powered Match Score (0–100%)**: Evaluates how well your resume matches the job description.
 2. 🚀 **Strengths & Skill Gap Identification**: Highlights skills you possess and marks missing requirements.

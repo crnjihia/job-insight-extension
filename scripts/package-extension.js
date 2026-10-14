@@ -28,11 +28,8 @@ try {
   }
 
   const stats = fs.statSync(zipFile);
-  const chunguzaZip = path.resolve(rootDir, "chunguza-extension-v0.1.0.zip");
-  fs.copyFileSync(zipFile, chunguzaZip);
   console.log(`\n✓ Chrome Web Store Package created successfully!`);
   console.log(`  File: ${zipFile}`);
-  console.log(`  File: ${chunguzaZip}`);
   console.log(`  Size: ${(stats.size / 1024).toFixed(2)} KB\n`);
 } catch (err) {
   console.error("Packaging failed:", err);
