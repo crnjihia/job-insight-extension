@@ -1,0 +1,26 @@
+{
+  "name": "job-insight-extension-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Job Insight Extension and Backend Monorepo",
+  "workspaces": [
+    "extension",
+    "backend"
+  ],
+  "scripts": {
+    "build:extension": "npm --prefix extension run build",
+    "build:backend": "npm --prefix backend run build",
+    "build": "npm run build:extension && npm run build:backend",
+    "test:extension": "npm --prefix extension test",
+    "test:backend": "npm --prefix backend test",
+    "test": "vitest run",
+    "package": "node scripts/package-extension.js"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^30.0.0",
+    "@types/supertest": "^7.2.1",
+    "jsdom": "^24.0.0",
+    "supertest": "^6.3.4",
+    "vitest": "^0.34.6"
+  }
+}

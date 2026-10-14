@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build artifacts
+dist/
+*/dist/
+*.zip
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Vite / IDE / Environment
+.env
+.env.local
+backend/.env
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,32 @@
+{
+  "name": "job-insight-extension",
+  "version": "0.1.0",
+  "description": "Chrome extension that overlays job-application intelligence on BrighterMonday, LinkedIn, and Fuzu.",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/**/*.ts src/**/*.tsx",
+    "format": "prettier --write src/**/*.ts src/**/*.tsx",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "chrome-types": "^0.1.209",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.33.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vitest": "^0.34.5"
+  }
+}
