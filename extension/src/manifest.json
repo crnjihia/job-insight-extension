@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Chunguza Extension",
+  "version": "0.1.0",
+  "description": "Job application intelligence overlay for BrighterMonday, LinkedIn, and Fuzu",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.brightermonday.co.ke/*",
+    "https://*.linkedin.com/*",
+    "https://*.fuzu.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "action": {
+    "default_popup": "popup/index.html"
+  },
+  "options_page": "options/index.html",
+  "content_scripts": [
+    {
+      "matches": ["*://*.brightermonday.co.ke/*"],
+      "js": ["content/brightermonday.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["content/linkedin.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://*.fuzu.com/*"],
+      "js": ["content/fuzu.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content/styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
