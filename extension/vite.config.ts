@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 import fs from "fs";
+import * as esbuild from "esbuild";
 
 function copyExtensionAssetsPlugin() {
   return {
@@ -63,6 +64,31 @@ function copyExtensionAssetsPlugin() {
       if (fs.existsSync(generatedOptions)) {
         fs.copyFileSync(generatedOptions, resolve(optionsDistDir, "index.html"));
       }
+
+      // 5. Build standalone IIFE content scripts (no external import statements)
+      const contentScripts = ["brightermonday", "linkedin", "fuzu"];
+      for (const name of contentScripts) {
+        esbuild.buildSync({
+          entryPoints: [resolve(srcDir, `content/${name}.ts`)],
+          outfile: resolve(contentDistDir, `${name}.js`),
+          bundle: true,
+          format: "iife",
+          define: { "process.env.NODE_ENV": '"production"' }
+        });
+      }
+
+      // 6. Build standalone background service worker (single-file ESM)
+      const bgDistDir = resolve(distDir, "background");
+      if (!fs.existsSync(bgDistDir)) {
+        fs.mkdirSync(bgDistDir, { recursive: true });
+      }
+      esbuild.buildSync({
+        entryPoints: [resolve(srcDir, "background/service-worker.ts")],
+        outfile: resolve(bgDistDir, "service-worker.js"),
+        bundle: true,
+        format: "esm",
+        define: { "process.env.NODE_ENV": '"production"' }
+      });
     }
   };
 }
@@ -75,22 +101,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         popup: resolve(__dirname, "src/popup/index.html"),
-        options: resolve(__dirname, "src/options/index.html"),
-        brightermonday: resolve(__dirname, "src/content/brightermonday.ts"),
-        linkedin: resolve(__dirname, "src/content/linkedin.ts"),
-        fuzu: resolve(__dirname, "src/content/fuzu.ts"),
-        "background/service-worker": resolve(__dirname, "src/background/service-worker.ts")
+        options: resolve(__dirname, "src/options/index.html")
       },
       output: {
-        entryFileNames: (chunkInfo) => {
-          if (["brightermonday", "linkedin", "fuzu"].includes(chunkInfo.name)) {
-            return `content/${chunkInfo.name}.js`;
-          }
-          if (chunkInfo.name === "background/service-worker") {
-            return `background/service-worker.js`;
-          }
-          return `[name].js`;
-        },
+        entryFileNames: "[name].js",
         assetFileNames: "assets/[name].[ext]"
       }
     }
