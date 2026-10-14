@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/Node.js-20-339933.svg?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js 20" />
   <img src="https://img.shields.io/badge/Tests-12%20Passed-10b981.svg?style=flat-square&logo=vitest&logoColor=white" alt="Vitest Tests" />
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="MIT License" />
+  <a href="https://crnjihia.github.io/job-insight-extension/"><img src="https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-0ea5e9.svg?style=flat-square&logo=githubpages&logoColor=white" alt="Live Demo" /></a>
   <img src="https://img.shields.io/badge/Status-Production%20Ready-success.svg?style=flat-square" alt="Status" />
 </p>
 

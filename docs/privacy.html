@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Job Insight Extension</title>
+  <meta name="description" content="Privacy Policy for Job Insight Extension. Learn how your data and resume text are processed in-memory with zero permanent retention.">
+  <link rel="icon" type="image/png" href="icon-48.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .privacy-container {
+      max-width: 860px;
+      margin: 3.5rem auto 6rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      backdrop-filter: blur(20px);
+    }
+    .privacy-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .privacy-date {
+      color: var(--cyan-light);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(14, 165, 233, 0.12);
+      border: 1px solid rgba(14, 165, 233, 0.25);
+    }
+    .privacy-content h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 2.2rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .privacy-content p, .privacy-content li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .privacy-content ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .privacy-content code {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: var(--cyan-light);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo-brand">
+        <img src="icon-128.png" alt="Job Insight Extension Logo" class="logo-icon-img">
+        <span class="logo-text">Job Insight</span>
+        <span class="version-badge">Privacy</span>
+      </a>
+
+      <div class="nav-cta-group">
+        <a href="index.html" class="btn btn-secondary btn-sm">
+          <span>&larr; Back to Home</span>
+        </a>
+        <a href="https://github.com/crnjihia/job-insight-extension" target="_blank" rel="noopener" class="btn btn-github btn-sm">
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="container">
+    <article class="privacy-container">
+      <h1 class="privacy-title">Privacy Policy</h1>
+      <div class="privacy-date">Effective Date: October 3, 2026</div>
+
+      <div class="privacy-content">
+        <p>
+          <strong>Job Insight Extension</strong> is a developer and candidate companion Chrome extension that assists job seekers by overlaying critical application intelligence (salary benchmarks, company ratings, and AI-generated match scores) directly onto job-listing portals including <strong>LinkedIn</strong>, <strong>BrighterMonday</strong>, and <strong>Fuzu</strong>.
+        </p>
+
+        <h2>1️⃣ What Data Is Processed?</h2>
+        <ul>
+          <li><strong>CV Text:</strong> When you upload a CV (PDF) through the extension options or popup panel, the raw text is extracted client-side and securely communicated to the backend API (<code>/cv/upload</code>) solely for computing the resume-to-job match score.</li>
+          <li><strong>Job Listing Details:</strong> Job title, employer name, and full description are extracted from supported target sites in-memory only and transmitted to the <code>/analyze</code> endpoint.</li>
+          <li><strong>Usage Preferences:</strong> Stored locally in <code>chrome.storage.sync</code> and <code>chrome.storage.local</code> (salary currency preference, notification toggles, cached CV snippet). No personally identifiable data is stored beyond what you explicitly upload.</li>
+        </ul>
+
+        <h2>2️⃣ How Data Is Utilized & Cached</h2>
+        <ul>
+          <li><strong>Zero Permanent Retention:</strong> CV text and job descriptions are transformed into a SHA-256 cryptographic hash. The resulting hash is cached in Redis for 24 hours to prevent redundant compute calls. The raw CV payload is discarded from memory once the response completes.</li>
+          <li><strong>Dual Scoring Pipeline:</strong> When running in default heuristic mode, scoring occurs locally with zero third-party transmissions. When configured with an Anthropic Claude API key, the in-memory payload is evaluated by Anthropic solely for the duration of the inference request.</li>
+          <li><strong>Public Intelligence Data:</strong> Company Glassdoor ratings and regional salary benchmarks are cached in MongoDB; these datasets are publicly sourced.</li>
+        </ul>
+
+        <h2>3️⃣ Third-Party Visibility & Data Sharing</h2>
+        <ul>
+          <li><strong>Candidate Sole Ownership:</strong> We do not sell, license, rent, or monetize your resume, search behavior, or application data.</li>
+          <li><strong>Anthropic (Claude API):</strong> If the optional Claude 3.5 Sonnet engine is enabled by the backend administrator, the in-memory payload is sent to Anthropic's secure inference API under their commercial data privacy terms (zero customer training).</li>
+          <li><strong>Security Logs:</strong> Server logs (IP address, timestamps) are maintained strictly for rate limiting (20 req/min per IP) and DDoS defense for a maximum of 30 days.</li>
+        </ul>
+
+        <h2>4️⃣ Security Measures</h2>
+        <ul>
+          <li>All API traffic is enforced over TLS / HTTPS.</li>
+          <li>Origin-validated CORS and API-key middleware protect internal endpoints.</li>
+          <li>Secrets and API credentials remain isolated in server-side environment variables and are never bundled into the client extension.</li>
+        </ul>
+
+        <h2>5️⃣ Candidate Rights & Deletion</h2>
+        <ul>
+          <li>You can delete your stored CV at any time via the extension Options tab. This immediately purges the cached CV text from local Chrome storage.</li>
+          <li>You can disable or uninstall the extension with one click via <code>chrome://extensions/</code>.</li>
+        </ul>
+
+        <h2>6️⃣ Contact</h2>
+        <p>
+          If you have questions, feedback, or concerns regarding this Privacy Policy, please reach out to the project maintainer:
+        </p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:crnjihia@gmail.com" style="color: var(--cyan-light); text-decoration: none;">crnjihia@gmail.com</a><br>
+          <strong>GitHub:</strong> <a href="https://github.com/crnjihia/job-insight-extension" target="_blank" rel="noopener" style="color: var(--cyan-light); text-decoration: none;">github.com/crnjihia/job-insight-extension</a>
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Job Insight Extension &bull; Built by crnjihia</div>
+      <div><a href="index.html" style="color: var(--cyan-light); text-decoration: none;">&larr; Return to Main Showcase</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>
