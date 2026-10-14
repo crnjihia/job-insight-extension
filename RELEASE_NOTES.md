@@ -8,7 +8,7 @@
 
 ## 🌟 Overview
 
-We are thrilled to announce the official **v0.1.0** release of **Job Insight Extension**! 
+I am thrilled to announce the official **v0.1.0** release of **Job Insight Extension**! 
 
 Job Insight eliminates guesswork from your job search by injecting real-time intelligence overlays into job listings across **LinkedIn**, **BrighterMonday**, and **Fuzu**. Built on Chrome Manifest V3 and powered by a dual-engine architecture (offline heuristic + optional Claude 3.5 Sonnet LLM reasoning), Job Insight scores your resume match, identifies critical skill gaps, estimates regional salary benchmarks, and pulls verified company ratings.
 

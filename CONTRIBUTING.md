@@ -1,12 +1,12 @@
 # Contributing to Job Insight Extension
 
-Thank you for your interest in contributing to **Job Insight Extension**! We welcome contributions to make job hunting smarter, more transparent, and more empowering.
+Thank you for your interest in contributing to **Job Insight Extension**! I welcome contributions to make job hunting smarter, more transparent, and more empowering.
 
 ---
 
 ## Code of Conduct
 
-We expect all contributors to adhere to standard open-source citizenship: be respectful, constructive, and collaborative.
+I expect all contributors to adhere to standard open-source citizenship: be respectful, constructive, and collaborative.
 
 ---
 
@@ -20,7 +20,7 @@ We expect all contributors to adhere to standard open-source citizenship: be res
 
 ### 2. Fork and Clone
 ```bash
-git clone https://github.com/<your-username>/job-insight-extension.git
+git clone https://github.com/crnjihia/job-insight-extension.git
 cd job-insight-extension
 npm install
 ```
@@ -62,7 +62,7 @@ Load the unpacked extension in Chrome by navigating to `chrome://extensions`, en
 
 ## Commit Guidelines
 
-We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+I follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
 
 - `feat:` A new feature for the user
 - `fix:` A bug fix
