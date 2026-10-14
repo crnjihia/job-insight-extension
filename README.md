@@ -16,6 +16,12 @@
 
 ---
 
+<p align="center">
+  <img src="docs/images/extension-demo.png" alt="Job Insight Extension in Action on LinkedIn" width="900" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);" />
+</p>
+
+---
+
 ## 📌 Overview
 
 **Job Insight Extension** is a developer and professional companion Chrome extension designed to eliminate guesswork from your job search. 
@@ -91,7 +97,7 @@ graph TD
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/job-insight-extension.git
+git clone https://github.com/crnjihia/job-insight-extension.git
 cd job-insight-extension
 ```
 
