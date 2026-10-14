@@ -77,7 +77,7 @@ function copyExtensionAssetsPlugin() {
         });
       }
 
-      // 6. Build standalone background service worker (single-file ESM)
+      // 6. Build standalone background service worker (single-file IIFE for classic script compatibility)
       const bgDistDir = resolve(distDir, "background");
       if (!fs.existsSync(bgDistDir)) {
         fs.mkdirSync(bgDistDir, { recursive: true });
@@ -86,7 +86,7 @@ function copyExtensionAssetsPlugin() {
         entryPoints: [resolve(srcDir, "background/service-worker.ts")],
         outfile: resolve(bgDistDir, "service-worker.js"),
         bundle: true,
-        format: "esm",
+        format: "iife",
         define: { "process.env.NODE_ENV": '"production"' }
       });
     }
