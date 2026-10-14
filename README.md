@@ -2,10 +2,6 @@
 
 <p align="center">
   <strong>Next-Gen Job Application Intelligence Overlay for BrighterMonday, LinkedIn, and Fuzu</strong>
-  <br /><br />
-  <a href="https://crnjihia.github.io/job-insight-extension/">
-    <img src="https://img.shields.io/badge/%F0%9F%8C%90%20Live%20Demo-Visit%20Website-0ea5e9?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Demo Website" />
-  </a>
 </p>
 
 <p align="center">
